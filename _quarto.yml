@@ -13,8 +13,8 @@ website:
 format:
   html:
     theme:
-      - dark
-      - brand
+      dark: darkly
+      light: flatly
     css: styles.css
     toc: true
 

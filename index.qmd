@@ -21,8 +21,6 @@ data_today <- return_vector$data_today %>%
 
 ```
 
-This page presents weather data for Fernie Alpine Resort over the past 3 days, based off the weather station situated underneath the top of the Bear chair, at 1615m NE aspect in Lizard Range.
-
 ## At a Glance
 
 ```{r}
@@ -332,12 +330,3 @@ return_vector$griz_cam
 
 
 ```
-
-
-## References
-
-[Mountain Weather](https://mountainweather.ca)
-<br>
-[Fernie Alpine Resort](https://ferniealpineresort.ca)
-<br>
-[Avalanche Canada](avalanchecanada.ca)
