@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>ferniew-weather-quarto – fernie-weather-data</title>
+<title>MVP’s Mountain Weather Update – fernie-weather-data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -36,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2cd88b842f3556f70e7132508a5c4eca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d14d0a0fcc695df64fec3e0f621bc056.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,6 +67,28 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/plotly-binding-4.11.0/plotly.js"></script>
+
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
 
 
 <link rel="stylesheet" href="styles.css">
@@ -108,15 +130,26 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Navigation</h2>
+   
+  <ul>
+  <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link active" data-scroll-target="#at-a-glance">At a Glance</a></li>
+  <li><a href="#charts" id="toc-charts" class="nav-link" data-scroll-target="#charts">Charts</a></li>
+  <li><a href="#avalanche-bulletin" id="toc-avalanche-bulletin" class="nav-link" data-scroll-target="#avalanche-bulletin">Avalanche Bulletin</a></li>
+  <li><a href="#lakemans-lookout" id="toc-lakemans-lookout" class="nav-link" data-scroll-target="#lakemans-lookout">Lakeman’s Lookout</a></li>
+  <li><a href="#grizzly-tales-for-gruesome-kids" id="toc-grizzly-tales-for-gruesome-kids" class="nav-link" data-scroll-target="#grizzly-tales-for-gruesome-kids">Grizzly Tales for Gruesome Kids</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ferniew-weather-quarto</h1>
+<h1 class="title">MVP’s Mountain Weather Update</h1>
 </div>
 
 
@@ -133,10 +166,305 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+<p>This page presents weather data for Fernie Alpine Resort over the past 3 days, based off the weather station situated underneath the top of the Bear chair, at 1615m NE aspect in Lizard Range.</p>
+<section id="at-a-glance" class="level2">
+<h2 class="anchored" data-anchor-id="at-a-glance">At a Glance</h2>
+<div class="cell" data-tbl-cap="Key data for the last 3 days provided by mountainweather.ca">
+<div class="cell-output cell-output-stdout">
+<pre><code>Data last updated on 2026-01-18 12:32:44 MST.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Most recent snowfall: over 3 days ago. Likely ski conditions: It's cooooold. Hard pack/icy conditions.</code></pre>
+</div>
+<div class="cell-output-display">
+<table class="table table-hover caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Key data for the last 3 days provided by mountainweather.ca</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">6 Hour</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">12 Hour</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">24 Hour</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">2 Day</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">3 Day</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd" data-grouplength="3">
+<td colspan="6" style="border-bottom: 1px solid"><strong>Temperature</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray; padding-left: 2em;" data-indentlevel="1">Avg Temp (°C)</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-5.7</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-6.9</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-6.9</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-6.9</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-5.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray; padding-left: 2em;" data-indentlevel="1">Max Temp (°C)</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-2.4</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-2.4</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-2.4</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-2.4</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">1.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray; padding-left: 2em;" data-indentlevel="1">Min Temp (°C)</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-8.5</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-8.7</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-9.5</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-10.0</td>
+<td style="text-align: left; background-color: blue !important; border-left: 1px solid gray;">-10.0</td>
+</tr>
+<tr class="odd" data-grouplength="4">
+<td colspan="6" style="border-bottom: 1px solid"><strong>Precipitation</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray; padding-left: 2em;" data-indentlevel="1">Total Precip (mm)</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray; padding-left: 2em;" data-indentlevel="1">- Snow (cm)</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray; padding-left: 2em;" data-indentlevel="1">- Rain (mm)</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray; padding-left: 2em;" data-indentlevel="1">- Mixed / Wet Snow (mm)</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+<td style="text-align: left; background-color: orange !important; border-left: 1px solid gray;">0</td>
+</tr>
+<tr class="even" data-grouplength="3">
+<td colspan="6" style="border-bottom: 1px solid"><strong>Wind Speed and Direciton</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray; padding-left: 2em;" data-indentlevel="1">Avg Wind Speed (m/s)</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">1.7</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">1.9</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">2.8</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">2.2</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">2.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray; padding-left: 2em;" data-indentlevel="1">Max Wind Speed (m/s)</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">3</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">5</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">9</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">9</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray; padding-left: 2em;" data-indentlevel="1">Prevelant Wind Direction</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">ESE</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">WSW</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">WSW</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">WSW</td>
+<td style="text-align: left; background-color: green !important; border-left: 1px solid gray;">WSW</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="charts" class="level2">
+<h2 class="anchored" data-anchor-id="charts">Charts</h2>
+<div class="cell">
+<div id="fig-plots-1" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plots-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-fcbb6e9177aba31cd380" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-fcbb6e9177aba31cd380">{"x":{"data":[{"x":[1768485600,1768500000,1768503600],"y":[0.29999999999999999,0.5,-1],"text":["Timestamp: 2026-01-15 14:00:00 <br>Air Temp: 0.3","Timestamp: 2026-01-15 18:00:00 <br>Air Temp: 0.5","Timestamp: 2026-01-15 19:00:00 <br>Air Temp: -1"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,165,0,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,165,0,1)"}},"hoveron":"points","name":"Mixed","legendgroup":"Mixed","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768478400,1768482000,1768489200,1768492800,1768496400],"y":[1.8,1.2,1.2,0.90000000000000002,1.3999999999999999],"text":["Timestamp: 2026-01-15 12:00:00 <br>Air Temp: 1.8","Timestamp: 2026-01-15 13:00:00 <br>Air Temp: 1.2","Timestamp: 2026-01-15 15:00:00 <br>Air Temp: 1.2","Timestamp: 2026-01-15 16:00:00 <br>Air Temp: 0.9","Timestamp: 2026-01-15 17:00:00 <br>Air Temp: 1.4"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,0,0,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,0,0,1)"}},"hoveron":"points","name":"Rain","legendgroup":"Rain","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768507200,1768510800,1768514400,1768518000,1768521600,1768525200,1768528800,1768532400,1768536000,1768539600,1768543200,1768546800,1768550400,1768554000,1768557600,1768561200,1768564800,1768568400,1768572000,1768575600,1768579200,1768582800,1768586400,1768590000,1768593600,1768597200,1768600800,1768604400,1768608000,1768611600,1768615200,1768618800,1768622400,1768626000,1768629600,1768633200,1768636800,1768640400,1768644000,1768647600,1768651200,1768654800,1768658400,1768662000,1768665600,1768669200,1768672800,1768676400,1768680000,1768683600,1768687200,1768690800,1768694400,1768698000,1768701600,1768705200,1768708800,1768712400,1768716000,1768719600,1768723200,1768726800,1768730400,1768734000,1768737600],"y":[-1.2,-1.3,-2.2999999999999998,-2.5,-2.7000000000000002,-2.7000000000000002,-3.5,-4.5999999999999996,-5.0999999999999996,-6.4000000000000004,-6.2000000000000002,-7.2999999999999998,-7.2999999999999998,-6.5,-5.2000000000000002,-4,-3.6000000000000001,-3.2000000000000002,-5.4000000000000004,-4.7000000000000002,-4.5999999999999996,-4.7000000000000002,-5,-5.5,-5.2000000000000002,-5.5999999999999996,-5.9000000000000004,-6.2000000000000002,-6.9000000000000004,-6.9000000000000004,-7.2000000000000002,-7.7999999999999998,-8.0999999999999996,-8.3000000000000007,-9.8000000000000007,-9.6999999999999993,-9.6999999999999993,-10,-9.3000000000000007,-8.4000000000000004,-8.3000000000000007,-7.5999999999999996,-8.8000000000000007,-4.7999999999999998,-6.5999999999999996,-5.2000000000000002,-4.2000000000000002,-4.2999999999999998,-5.2999999999999998,-8.9000000000000004,-9,-9.5,-8.9000000000000004,-8.6999999999999993,-8,-8.5999999999999996,-8.4000000000000004,-7.9000000000000004,-7.5999999999999996,-8.5,-8.5,-6.4000000000000004,-4.7000000000000002,-3.3999999999999999,-2.3999999999999999],"text":["Timestamp: 2026-01-15 20:00:00 <br>Air Temp: -1.2","Timestamp: 2026-01-15 21:00:00 <br>Air Temp: -1.3","Timestamp: 2026-01-15 22:00:00 <br>Air Temp: -2.3","Timestamp: 2026-01-15 23:00:00 <br>Air Temp: -2.5","Timestamp: 2026-01-16 <br>Air Temp: -2.7","Timestamp: 2026-01-16 01:00:00 <br>Air Temp: -2.7","Timestamp: 2026-01-16 02:00:00 <br>Air Temp: -3.5","Timestamp: 2026-01-16 03:00:00 <br>Air Temp: -4.6","Timestamp: 2026-01-16 04:00:00 <br>Air Temp: -5.1","Timestamp: 2026-01-16 05:00:00 <br>Air Temp: -6.4","Timestamp: 2026-01-16 06:00:00 <br>Air Temp: -6.2","Timestamp: 2026-01-16 07:00:00 <br>Air Temp: -7.3","Timestamp: 2026-01-16 08:00:00 <br>Air Temp: -7.3","Timestamp: 2026-01-16 09:00:00 <br>Air Temp: -6.5","Timestamp: 2026-01-16 10:00:00 <br>Air Temp: -5.2","Timestamp: 2026-01-16 11:00:00 <br>Air Temp: -4","Timestamp: 2026-01-16 12:00:00 <br>Air Temp: -3.6","Timestamp: 2026-01-16 13:00:00 <br>Air Temp: -3.2","Timestamp: 2026-01-16 14:00:00 <br>Air Temp: -5.4","Timestamp: 2026-01-16 15:00:00 <br>Air Temp: -4.7","Timestamp: 2026-01-16 16:00:00 <br>Air Temp: -4.6","Timestamp: 2026-01-16 17:00:00 <br>Air Temp: -4.7","Timestamp: 2026-01-16 18:00:00 <br>Air Temp: -5","Timestamp: 2026-01-16 19:00:00 <br>Air Temp: -5.5","Timestamp: 2026-01-16 20:00:00 <br>Air Temp: -5.2","Timestamp: 2026-01-16 21:00:00 <br>Air Temp: -5.6","Timestamp: 2026-01-16 22:00:00 <br>Air Temp: -5.9","Timestamp: 2026-01-16 23:00:00 <br>Air Temp: -6.2","Timestamp: 2026-01-17 <br>Air Temp: -6.9","Timestamp: 2026-01-17 01:00:00 <br>Air Temp: -6.9","Timestamp: 2026-01-17 02:00:00 <br>Air Temp: -7.2","Timestamp: 2026-01-17 03:00:00 <br>Air Temp: -7.8","Timestamp: 2026-01-17 04:00:00 <br>Air Temp: -8.1","Timestamp: 2026-01-17 05:00:00 <br>Air Temp: -8.3","Timestamp: 2026-01-17 06:00:00 <br>Air Temp: -9.8","Timestamp: 2026-01-17 07:00:00 <br>Air Temp: -9.7","Timestamp: 2026-01-17 08:00:00 <br>Air Temp: -9.7","Timestamp: 2026-01-17 09:00:00 <br>Air Temp: -10","Timestamp: 2026-01-17 10:00:00 <br>Air Temp: -9.3","Timestamp: 2026-01-17 11:00:00 <br>Air Temp: -8.4","Timestamp: 2026-01-17 12:00:00 <br>Air Temp: -8.3","Timestamp: 2026-01-17 13:00:00 <br>Air Temp: -7.6","Timestamp: 2026-01-17 14:00:00 <br>Air Temp: -8.8","Timestamp: 2026-01-17 15:00:00 <br>Air Temp: -4.8","Timestamp: 2026-01-17 16:00:00 <br>Air Temp: -6.6","Timestamp: 2026-01-17 17:00:00 <br>Air Temp: -5.2","Timestamp: 2026-01-17 18:00:00 <br>Air Temp: -4.2","Timestamp: 2026-01-17 19:00:00 <br>Air Temp: -4.3","Timestamp: 2026-01-17 20:00:00 <br>Air Temp: -5.3","Timestamp: 2026-01-17 21:00:00 <br>Air Temp: -8.9","Timestamp: 2026-01-17 22:00:00 <br>Air Temp: -9","Timestamp: 2026-01-17 23:00:00 <br>Air Temp: -9.5","Timestamp: 2026-01-18 <br>Air Temp: -8.9","Timestamp: 2026-01-18 01:00:00 <br>Air Temp: -8.7","Timestamp: 2026-01-18 02:00:00 <br>Air Temp: -8","Timestamp: 2026-01-18 03:00:00 <br>Air Temp: -8.6","Timestamp: 2026-01-18 04:00:00 <br>Air Temp: -8.4","Timestamp: 2026-01-18 05:00:00 <br>Air Temp: -7.9","Timestamp: 2026-01-18 06:00:00 <br>Air Temp: -7.6","Timestamp: 2026-01-18 07:00:00 <br>Air Temp: -8.5","Timestamp: 2026-01-18 08:00:00 <br>Air Temp: -8.5","Timestamp: 2026-01-18 09:00:00 <br>Air Temp: -6.4","Timestamp: 2026-01-18 10:00:00 <br>Air Temp: -4.7","Timestamp: 2026-01-18 11:00:00 <br>Air Temp: -3.4","Timestamp: 2026-01-18 12:00:00 <br>Air Temp: -2.4"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)"}},"hoveron":"points","name":"Snow","legendgroup":"Snow","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768478400,null,1768482000,null,1768485600,null,1768489200,null,1768492800,null,1768496400,null,1768500000,null,1768503600,null,1768507200,null,1768510800,null,1768514400,null,1768518000,null,1768521600,null,1768525200,null,1768528800,null,1768532400,null,1768536000,null,1768539600,null,1768543200,null,1768546800,null,1768550400,null,1768554000,null,1768557600,null,1768561200,null,1768564800,null,1768568400,null,1768572000,null,1768575600,null,1768579200,null,1768582800,null,1768586400,null,1768590000,null,1768593600,null,1768597200,null,1768600800,null,1768604400,null,1768608000,null,1768611600,null,1768615200,null,1768618800,null,1768622400,null,1768626000,null,1768629600,null,1768633200,null,1768636800,null,1768640400,null,1768644000,null,1768647600,null,1768651200,null,1768654800,null,1768658400,null,1768662000,null,1768665600,null,1768669200,null,1768672800,null,1768676400,null,1768680000,null,1768683600,null,1768687200,null,1768690800,null,1768694400,null,1768698000,null,1768701600,null,1768705200,null,1768708800,null,1768712400,null,1768716000,null,1768719600,null,1768723200,null,1768726800,null,1768730400,null,1768734000,null,1768737600],"y":[1.8,null,1.2,null,0.29999999999999999,null,1.2,null,0.90000000000000002,null,1.3999999999999999,null,0.5,null,-1,null,-1.2,null,-1.3,null,-2.2999999999999998,null,-2.5,null,-2.7000000000000002,null,-2.7000000000000002,null,-3.5,null,-4.5999999999999996,null,-5.0999999999999996,null,-6.4000000000000004,null,-6.2000000000000002,null,-7.2999999999999998,null,-7.2999999999999998,null,-6.5,null,-5.2000000000000002,null,-4,null,-3.6000000000000001,null,-3.2000000000000002,null,-5.4000000000000004,null,-4.7000000000000002,null,-4.5999999999999996,null,-4.7000000000000002,null,-5,null,-5.5,null,-5.2000000000000002,null,-5.5999999999999996,null,-5.9000000000000004,null,-6.2000000000000002,null,-6.9000000000000004,null,-6.9000000000000004,null,-7.2000000000000002,null,-7.7999999999999998,null,-8.0999999999999996,null,-8.3000000000000007,null,-9.8000000000000007,null,-9.6999999999999993,null,-9.6999999999999993,null,-10,null,-9.3000000000000007,null,-8.4000000000000004,null,-8.3000000000000007,null,-7.5999999999999996,null,-8.8000000000000007,null,-4.7999999999999998,null,-6.5999999999999996,null,-5.2000000000000002,null,-4.2000000000000002,null,-4.2999999999999998,null,-5.2999999999999998,null,-8.9000000000000004,null,-9,null,-9.5,null,-8.9000000000000004,null,-8.6999999999999993,null,-8,null,-8.5999999999999996,null,-8.4000000000000004,null,-7.9000000000000004,null,-7.5999999999999996,null,-8.5,null,-8.5,null,-6.4000000000000004,null,-4.7000000000000002,null,-3.3999999999999999,null,-2.3999999999999999],"text":["Timestamp: 2026-01-15 12:00:00 <br>Air Temp: 1.8",null,"Timestamp: 2026-01-15 13:00:00 <br>Air Temp: 1.2",null,"Timestamp: 2026-01-15 14:00:00 <br>Air Temp: 0.3",null,"Timestamp: 2026-01-15 15:00:00 <br>Air Temp: 1.2",null,"Timestamp: 2026-01-15 16:00:00 <br>Air Temp: 0.9",null,"Timestamp: 2026-01-15 17:00:00 <br>Air Temp: 1.4",null,"Timestamp: 2026-01-15 18:00:00 <br>Air Temp: 0.5",null,"Timestamp: 2026-01-15 19:00:00 <br>Air Temp: -1",null,"Timestamp: 2026-01-15 20:00:00 <br>Air Temp: -1.2",null,"Timestamp: 2026-01-15 21:00:00 <br>Air Temp: -1.3",null,"Timestamp: 2026-01-15 22:00:00 <br>Air Temp: -2.3",null,"Timestamp: 2026-01-15 23:00:00 <br>Air Temp: -2.5",null,"Timestamp: 2026-01-16 <br>Air Temp: -2.7",null,"Timestamp: 2026-01-16 01:00:00 <br>Air Temp: -2.7",null,"Timestamp: 2026-01-16 02:00:00 <br>Air Temp: -3.5",null,"Timestamp: 2026-01-16 03:00:00 <br>Air Temp: -4.6",null,"Timestamp: 2026-01-16 04:00:00 <br>Air Temp: -5.1",null,"Timestamp: 2026-01-16 05:00:00 <br>Air Temp: -6.4",null,"Timestamp: 2026-01-16 06:00:00 <br>Air Temp: -6.2",null,"Timestamp: 2026-01-16 07:00:00 <br>Air Temp: -7.3",null,"Timestamp: 2026-01-16 08:00:00 <br>Air Temp: -7.3",null,"Timestamp: 2026-01-16 09:00:00 <br>Air Temp: -6.5",null,"Timestamp: 2026-01-16 10:00:00 <br>Air Temp: -5.2",null,"Timestamp: 2026-01-16 11:00:00 <br>Air Temp: -4",null,"Timestamp: 2026-01-16 12:00:00 <br>Air Temp: -3.6",null,"Timestamp: 2026-01-16 13:00:00 <br>Air Temp: -3.2",null,"Timestamp: 2026-01-16 14:00:00 <br>Air Temp: -5.4",null,"Timestamp: 2026-01-16 15:00:00 <br>Air Temp: -4.7",null,"Timestamp: 2026-01-16 16:00:00 <br>Air Temp: -4.6",null,"Timestamp: 2026-01-16 17:00:00 <br>Air Temp: -4.7",null,"Timestamp: 2026-01-16 18:00:00 <br>Air Temp: -5",null,"Timestamp: 2026-01-16 19:00:00 <br>Air Temp: -5.5",null,"Timestamp: 2026-01-16 20:00:00 <br>Air Temp: -5.2",null,"Timestamp: 2026-01-16 21:00:00 <br>Air Temp: -5.6",null,"Timestamp: 2026-01-16 22:00:00 <br>Air Temp: -5.9",null,"Timestamp: 2026-01-16 23:00:00 <br>Air Temp: -6.2",null,"Timestamp: 2026-01-17 <br>Air Temp: -6.9",null,"Timestamp: 2026-01-17 01:00:00 <br>Air Temp: -6.9",null,"Timestamp: 2026-01-17 02:00:00 <br>Air Temp: -7.2",null,"Timestamp: 2026-01-17 03:00:00 <br>Air Temp: -7.8",null,"Timestamp: 2026-01-17 04:00:00 <br>Air Temp: -8.1",null,"Timestamp: 2026-01-17 05:00:00 <br>Air Temp: -8.3",null,"Timestamp: 2026-01-17 06:00:00 <br>Air Temp: -9.8",null,"Timestamp: 2026-01-17 07:00:00 <br>Air Temp: -9.7",null,"Timestamp: 2026-01-17 08:00:00 <br>Air Temp: -9.7",null,"Timestamp: 2026-01-17 09:00:00 <br>Air Temp: -10",null,"Timestamp: 2026-01-17 10:00:00 <br>Air Temp: -9.3",null,"Timestamp: 2026-01-17 11:00:00 <br>Air Temp: -8.4",null,"Timestamp: 2026-01-17 12:00:00 <br>Air Temp: -8.3",null,"Timestamp: 2026-01-17 13:00:00 <br>Air Temp: -7.6",null,"Timestamp: 2026-01-17 14:00:00 <br>Air Temp: -8.8",null,"Timestamp: 2026-01-17 15:00:00 <br>Air Temp: -4.8",null,"Timestamp: 2026-01-17 16:00:00 <br>Air Temp: -6.6",null,"Timestamp: 2026-01-17 17:00:00 <br>Air Temp: -5.2",null,"Timestamp: 2026-01-17 18:00:00 <br>Air Temp: -4.2",null,"Timestamp: 2026-01-17 19:00:00 <br>Air Temp: -4.3",null,"Timestamp: 2026-01-17 20:00:00 <br>Air Temp: -5.3",null,"Timestamp: 2026-01-17 21:00:00 <br>Air Temp: -8.9",null,"Timestamp: 2026-01-17 22:00:00 <br>Air Temp: -9",null,"Timestamp: 2026-01-17 23:00:00 <br>Air Temp: -9.5",null,"Timestamp: 2026-01-18 <br>Air Temp: -8.9",null,"Timestamp: 2026-01-18 01:00:00 <br>Air Temp: -8.7",null,"Timestamp: 2026-01-18 02:00:00 <br>Air Temp: -8",null,"Timestamp: 2026-01-18 03:00:00 <br>Air Temp: -8.6",null,"Timestamp: 2026-01-18 04:00:00 <br>Air Temp: -8.4",null,"Timestamp: 2026-01-18 05:00:00 <br>Air Temp: -7.9",null,"Timestamp: 2026-01-18 06:00:00 <br>Air Temp: -7.6",null,"Timestamp: 2026-01-18 07:00:00 <br>Air Temp: -8.5",null,"Timestamp: 2026-01-18 08:00:00 <br>Air Temp: -8.5",null,"Timestamp: 2026-01-18 09:00:00 <br>Air Temp: -6.4",null,"Timestamp: 2026-01-18 10:00:00 <br>Air Temp: -4.7",null,"Timestamp: 2026-01-18 11:00:00 <br>Air Temp: -3.4",null,"Timestamp: 2026-01-18 12:00:00 <br>Air Temp: -2.4"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,0.5)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768465440,1768750560],"y":[0.5,0.5],"text":"","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(255,0,0,1)","dash":"dash"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768465440,1768750560],"y":[-1,-1],"text":"","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)","dash":"dash"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768465440,1768750560],"y":[-5,-5],"text":"","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)","dash":"dash"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768465440,1768750560],"y":[0,0],"text":"","type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(190,190,190,1)","dash":"dash"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":23.305936073059364,"r":7.3059360730593621,"b":22.648401826484022,"l":54.794520547945211},"plot_bgcolor":"rgba(51,51,51,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1768465440,1768750560],"tickmode":"array","ticktext":["Jan 16","Jan 17","Jan 18"],"tickvals":[1768521600,1768608000,1768694400],"categoryorder":"array","categoryarray":["Jan 16","Jan 17","Jan 18"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-10.59,2.3900000000000001],"tickmode":"array","ticktext":["-10.0","-7.5","-5.0","-2.5","0.0"],"tickvals":[-10,-7.5,-5,-2.5,0],"categoryorder":"array","categoryarray":["-10.0","-7.5","-5.0","-2.5","0.0"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0,"zeroline":false,"anchor":"x","title":{"text":"Air temperature (°C)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":false,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"3944dc55825":{"x":{},"y":{},"text":{},"colour":{},"type":"scatter"},"3944575d1458":{"x":{},"y":{},"text":{}},"39446c6e3a48":{"yintercept":{}},"39444da2575":{"yintercept":{}},"39442c9e5e65":{"yintercept":{}},"39442cc12a49":{"yintercept":{}}},"cur_data":"3944dc55825","visdat":{"3944dc55825":["function (y) ","x"],"3944575d1458":["function (y) ","x"],"39446c6e3a48":["function (y) ","x"],"39444da2575":["function (y) ","x"],"39442c9e5e65":["function (y) ","x"],"39442cc12a49":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plots-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Air temperature
+</figcaption>
+</figure>
+</div>
+<div id="fig-plots-2" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-plots-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-5fd5cf13c4899f96f38b" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-5fd5cf13c4899f96f38b">{"x":{"data":[{"x":[1768478400,1768482000,1768485600,1768489200,1768492800,1768496400,1768500000,1768503600,1768507200,1768510800,1768514400,1768518000,1768521600,1768525200,1768528800,1768532400,1768536000,1768539600,1768543200,1768546800,1768550400,1768554000,1768557600,1768561200,1768564800,1768568400,1768572000,1768575600,1768579200,1768582800,1768586400,1768590000,1768593600,1768597200,1768600800,1768604400,1768608000,1768611600,1768615200,1768618800,1768622400,1768626000,1768629600,1768633200,1768636800,1768640400,1768644000,1768647600,1768651200,1768654800,1768658400,1768662000,1768665600,1768669200,1768672800,1768676400,1768680000,1768683600,1768687200,1768690800,1768694400,1768698000,1768701600,1768705200,1768708800,1768712400,1768716000,1768719600,1768723200,1768726800,1768730400,1768734000,1768737600],"y":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"text":["Timestamp: 2026-01-15 12:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-15 13:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-15 14:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-15 15:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-15 16:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-15 17:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-15 18:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-15 19:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-15 20:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-15 21:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-15 22:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-15 23:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 00:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 01:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 02:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 03:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 04:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 05:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 06:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 07:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 08:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 09:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 10:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 11:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 12:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 13:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 14:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 15:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 16:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 17:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 18:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 19:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 20:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 21:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 22:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-16 23:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 00:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 01:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 02:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 03:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 04:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 05:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 06:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 07:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 08:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 09:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 10:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 11:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 12:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 13:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 14:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 15:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 16:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 17:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 18:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 19:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 20:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 21:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 22:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-17 23:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 00:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 01:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 02:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 03:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 04:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 05:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 06:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 07:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 08:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 09:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 10:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 11:00:00<br />HourlyRainCumulativeMM: 0","Timestamp: 2026-01-18 12:00:00<br />HourlyRainCumulativeMM: 0"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,0,255,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768478400,1768482000,1768485600,1768489200,1768492800,1768496400,1768500000,1768503600,1768507200,1768510800,1768514400,1768518000,1768521600,1768525200,1768528800,1768532400,1768536000,1768539600,1768543200,1768546800,1768550400,1768554000,1768557600,1768561200,1768564800,1768568400,1768572000,1768575600,1768579200,1768582800,1768586400,1768590000,1768593600,1768597200,1768600800,1768604400,1768608000,1768611600,1768615200,1768618800,1768622400,1768626000,1768629600,1768633200,1768636800,1768640400,1768644000,1768647600,1768651200,1768654800,1768658400,1768662000,1768665600,1768669200,1768672800,1768676400,1768680000,1768683600,1768687200,1768690800,1768694400,1768698000,1768701600,1768705200,1768708800,1768712400,1768716000,1768719600,1768723200,1768726800,1768730400,1768734000,1768737600],"y":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"text":["Timestamp: 2026-01-15 12:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-15 13:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-15 14:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-15 15:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-15 16:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-15 17:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-15 18:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-15 19:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-15 20:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-15 21:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-15 22:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-15 23:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 00:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 01:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 02:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 03:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 04:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 05:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 06:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 07:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 08:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 09:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 10:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 11:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 12:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 13:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 14:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 15:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 16:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 17:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 18:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 19:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 20:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 21:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 22:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-16 23:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 00:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 01:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 02:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 03:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 04:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 05:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 06:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 07:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 08:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 09:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 10:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 11:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 12:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 13:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 14:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 15:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 16:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 17:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 18:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 19:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 20:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 21:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 22:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-17 23:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 00:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 01:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 02:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 03:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 04:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 05:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 06:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 07:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 08:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 09:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 10:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 11:00:00<br />HourlyMixedCumulativeMM: 0","Timestamp: 2026-01-18 12:00:00<br />HourlyMixedCumulativeMM: 0"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(0,255,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768478400,1768482000,1768485600,1768489200,1768492800,1768496400,1768500000,1768503600,1768507200,1768510800,1768514400,1768518000,1768521600,1768525200,1768528800,1768532400,1768536000,1768539600,1768543200,1768546800,1768550400,1768554000,1768557600,1768561200,1768564800,1768568400,1768572000,1768575600,1768579200,1768582800,1768586400,1768590000,1768593600,1768597200,1768600800,1768604400,1768608000,1768611600,1768615200,1768618800,1768622400,1768626000,1768629600,1768633200,1768636800,1768640400,1768644000,1768647600,1768651200,1768654800,1768658400,1768662000,1768665600,1768669200,1768672800,1768676400,1768680000,1768683600,1768687200,1768690800,1768694400,1768698000,1768701600,1768705200,1768708800,1768712400,1768716000,1768719600,1768723200,1768726800,1768730400,1768734000,1768737600],"y":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"text":["Timestamp: 2026-01-15 12:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-15 13:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-15 14:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-15 15:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-15 16:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-15 17:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-15 18:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-15 19:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-15 20:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-15 21:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-15 22:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-15 23:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 00:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 01:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 02:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 03:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 04:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 05:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 06:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 07:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 08:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 09:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 10:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 11:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 12:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 13:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 14:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 15:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 16:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 17:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 18:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 19:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 20:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 21:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 22:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-16 23:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 00:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 01:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 02:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 03:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 04:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 05:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 06:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 07:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 08:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 09:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 10:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 11:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 12:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 13:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 14:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 15:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 16:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 17:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 18:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 19:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 20:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 21:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 22:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-17 23:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 00:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 01:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 02:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 03:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 04:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 05:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 06:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 07:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 08:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 09:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 10:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 11:00:00<br />HourlySnowCumulativeMM: 0","Timestamp: 2026-01-18 12:00:00<br />HourlySnowCumulativeMM: 0"],"type":"scatter","mode":"lines","line":{"width":3.7795275590551185,"color":"rgba(255,255,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768478400,1768482000,1768485600,1768489200,1768492800,1768496400,1768500000,1768503600,1768507200,1768510800,1768514400,1768518000,1768521600,1768525200,1768528800,1768532400,1768536000,1768539600,1768543200,1768546800,1768550400,1768554000,1768557600,1768561200,1768564800,1768568400,1768572000,1768575600,1768579200,1768582800,1768586400,1768590000,1768593600,1768597200,1768600800,1768604400,1768608000,1768611600,1768615200,1768618800,1768622400,1768626000,1768629600,1768633200,1768636800,1768640400,1768644000,1768647600,1768651200,1768654800,1768658400,1768662000,1768665600,1768669200,1768672800,1768676400,1768680000,1768683600,1768687200,1768690800,1768694400,1768698000,1768701600,1768705200,1768708800,1768712400,1768716000,1768719600,1768723200,1768726800,1768730400,1768734000,1768737600],"y":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],"text":["Timestamp: 2026-01-15 12:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-15 13:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-15 14:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-15 15:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-15 16:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-15 17:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-15 18:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-15 19:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-15 20:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-15 21:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-15 22:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-15 23:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 00:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 01:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 02:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 03:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 04:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 05:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 06:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 07:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 08:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 09:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 10:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 11:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 12:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 13:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 14:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 15:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 16:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 17:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 18:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 19:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 20:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 21:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 22:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-16 23:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 00:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 01:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 02:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 03:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 04:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 05:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 06:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 07:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 08:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 09:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 10:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 11:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 12:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 13:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 14:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 15:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 16:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 17:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 18:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 19:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 20:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 21:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 22:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-17 23:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 00:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 01:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 02:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 03:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 04:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 05:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 06:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 07:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 08:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 09:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 10:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 11:00:00<br />HourlyPrecipMM: 0","Timestamp: 2026-01-18 12:00:00<br />HourlyPrecipMM: 0"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"rgba(0,0,0,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768485600,1768500000,1768503600],"y":[null,null,null],"text":["Timestamp: 2026-01-15 14:00:00<br />PrecipMM: NA<br />PrecipType: Mixed","Timestamp: 2026-01-15 18:00:00<br />PrecipMM: NA<br />PrecipType: Mixed","Timestamp: 2026-01-15 19:00:00<br />PrecipMM: NA<br />PrecipType: Mixed"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,255,0,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,255,0,1)"}},"hoveron":"points","name":"Mixed","legendgroup":"Mixed","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768478400,1768482000,1768489200,1768492800,1768496400],"y":[null,null,null,null,null],"text":["Timestamp: 2026-01-15 12:00:00<br />PrecipMM: NA<br />PrecipType: Rain","Timestamp: 2026-01-15 13:00:00<br />PrecipMM: NA<br />PrecipType: Rain","Timestamp: 2026-01-15 15:00:00<br />PrecipMM: NA<br />PrecipType: Rain","Timestamp: 2026-01-15 16:00:00<br />PrecipMM: NA<br />PrecipType: Rain","Timestamp: 2026-01-15 17:00:00<br />PrecipMM: NA<br />PrecipType: Rain"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(0,0,255,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(0,0,255,1)"}},"hoveron":"points","name":"Rain","legendgroup":"Rain","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[1768507200,1768510800,1768514400,1768518000,1768521600,1768525200,1768528800,1768532400,1768536000,1768539600,1768543200,1768546800,1768550400,1768554000,1768557600,1768561200,1768564800,1768568400,1768572000,1768575600,1768579200,1768582800,1768586400,1768590000,1768593600,1768597200,1768600800,1768604400,1768608000,1768611600,1768615200,1768618800,1768622400,1768626000,1768629600,1768633200,1768636800,1768640400,1768644000,1768647600,1768651200,1768654800,1768658400,1768662000,1768665600,1768669200,1768672800,1768676400,1768680000,1768683600,1768687200,1768690800,1768694400,1768698000,1768701600,1768705200,1768708800,1768712400,1768716000,1768719600,1768723200,1768726800,1768730400,1768734000,1768737600],"y":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"text":["Timestamp: 2026-01-15 20:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-15 21:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-15 22:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-15 23:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 00:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 01:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 02:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 03:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 04:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 05:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 06:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 07:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 08:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 09:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 10:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 11:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 12:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 13:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 14:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 15:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 16:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 17:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 18:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 19:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 20:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 21:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 22:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-16 23:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 00:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 01:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 02:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 03:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 04:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 05:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 06:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 07:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 08:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 09:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 10:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 11:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 12:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 13:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 14:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 15:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 16:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 17:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 18:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 19:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 20:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 21:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 22:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-17 23:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 00:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 01:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 02:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 03:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 04:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 05:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 06:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 07:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 08:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 09:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 10:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 11:00:00<br />PrecipMM: NA<br />PrecipType: Snow","Timestamp: 2026-01-18 12:00:00<br />PrecipMM: NA<br />PrecipType: Snow"],"type":"scatter","mode":"markers","marker":{"autocolorscale":false,"color":"rgba(255,255,0,1)","opacity":1,"size":5.6692913385826778,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(255,255,0,1)"}},"hoveron":"points","name":"Snow","legendgroup":"Snow","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":23.305936073059364,"r":7.3059360730593621,"b":22.648401826484022,"l":60.639269406392714},"plot_bgcolor":"rgba(51,51,51,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[1768465440,1768750560],"tickmode":"array","ticktext":["Jan 16","Jan 17","Jan 18"],"tickvals":[1768521600,1768608000,1768694400],"categoryorder":"array","categoryarray":["Jan 16","Jan 17","Jan 18"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0,"zeroline":false,"anchor":"y","title":{"text":"","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-0.050000000000000003,0.050000000000000003],"tickmode":"array","ticktext":["-0.050","-0.025","0.000","0.025","0.050"],"tickvals":[-0.050000000000000003,-0.025000000000000001,0,0.025000000000000008,0.050000000000000003],"categoryorder":"array","categoryarray":["-0.050","-0.025","0.000","0.025","0.050"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0,"zeroline":false,"anchor":"x","title":{"text":"Cumulative precip (mm)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[{"type":"rect","fillcolor":null,"line":{"color":null,"width":0,"linetype":[]},"yref":"paper","xref":"paper","layer":"below","x0":0,"x1":1,"y0":0,"y1":1}],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"PrecipType","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"orientation":"h","x":0.5,"xanchor":"center","y":-0.20000000000000001,"yanchor":"bottom"},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"394422352e10":{"x":{},"y":{},"type":"scatter"},"39443d6d4636":{"x":{},"y":{}},"3944582d6a84":{"x":{},"y":{}},"3944333c1089":{"x":{},"y":{}},"39446e3160c2":{"x":{},"y":{},"colour":{}}},"cur_data":"394422352e10","visdat":{"394422352e10":["function (y) ","x"],"39443d6d4636":["function (y) ","x"],"3944582d6a84":["function (y) ","x"],"3944333c1089":["function (y) ","x"],"39446e3160c2":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-plots-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Precipitation by type. Any precip that falls between -1°C and 0.5°C is presumed to be mixed, trending towards rain. Any precip that falls above 0.5°C is presumed to be rain.
+</figcaption>
+</figure>
+</div>
+</div>
+<hr>
+<div class="cell quarto-layout-panel" data-layout="[[50,50]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/wind-plots-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Wind speed and direction over time. The direction of the arrow represents the average direction and the length of the arrow represents the average wind speed over each hour along the time axis.</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/wind-plots-2.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Wind speed and direction over the last 3 days. Each segment of the graph shows the frequency of average hourly wind direction and speed, broken down into 12 compass directions and speed intervals of 10 m/s.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="avalanche-bulletin" class="level2">
+<h2 class="anchored" data-anchor-id="avalanche-bulletin">Avalanche Bulletin</h2>
+<div class="cell">
+<div class="cell-output-display">
+<p>Updated on 2026-01-17 17:00:00 MST, valid until 2026-01-18 17:00:00 MST. Valid for: Akamina-Flathead-Lizard-Moyie-St. Mary.</p>
+<div class="container-grid">
+    <div class="column">
+<h5 class="anchored">Summary</h5>
+<em>Before committing to a slope, consider how far you would slide if you slipped on the crust. </em>
+<br>
+<ul><li>Avalanche activity is unlikely when a thick melt-freeze crust is present on the snow surface.</li><li>This is a good time for exploring terrain.</li><li>A hard crust on the snow surface will help strengthen the snowpack, but may cause tough travel conditions.</li></ul>
+</div>
+    <div class="column">
+<h5 class="anchored">Danger Ratings</h5>
+
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Elevation</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th"><span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: grey !important;">Sunday</span></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th"><span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: grey !important;">Monday</span></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th"><span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: grey !important;">Tuesday</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Alpine</td>
+<td style="text-align: left;"><span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: green !important;">1 - Low</span></td>
+<td style="text-align: left;"><span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: green !important;">1 - Low</span></td>
+<td style="text-align: left;"><span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: green !important;">1 - Low</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Treeline</td>
+<td style="text-align: left;"><span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: green !important;">1 - Low</span></td>
+<td style="text-align: left;"><span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: green !important;">1 - Low</span></td>
+<td style="text-align: left;"><span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: green !important;">1 - Low</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Below Treeline</td>
+<td style="text-align: left;"><span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: green !important;">1 - Low</span></td>
+<td style="text-align: left;"><span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: green !important;">1 - Low</span></td>
+<td style="text-align: left;"><span style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: green !important;">1 - Low</span></td>
+</tr>
+</tbody>
+</table>
+
+<br>
+<h5 class="anchored">Report Confidence</h5>
+<p>
+<i>
+HIGH
+- 
+Confidence is due to a stable weather pattern; little change is expected for several days.
+.
+</i>
+</p>
+</div>
+</div>
+<br>
+<details>
+<summary>Click to see more detail on problems, snowpack and weather...</summary>
+<h5 class="anchored">Problems</h5>
+No present reported problems.
+<br>
+<h5 class="anchored">Further Detail</h5>
+<i>Avalanche Summary</i> <p>A few small wet loose avalanches were reported on Thursday. A crust has formed on the surface making avalanche activity unlikely. A natural avalanche cycle occurred at the beginning of the week with many avalanches (size 1-2) on all aspects and elevations. </p>
+<i>Snowpack Summary</i> <p>A crust or moist snow exists on the surface at most elevations due to recent rain and warm temperatures. Below this, the upper snowpack is slowly drying out with colder temperatures.  There are multiple crusts in the mid and lower snowpack, and it is generally dense and well-settled. The average snowpack depth at treeline is roughly 150 to 200 cm.</p>
+<i>Weather Summary</i> <p><strong>Saturday Night</strong><br>Clear skies. 15 to 30 km/h variable direction ridgetop wind. Treeline temperature -3 °C. <br><br><strong>Sunday</strong><br>Mostly sunny. 10 km/h variable direction ridgetop wind. Treeline temperature -5 °C. <br><br><strong>Monday</strong><br>Mostly sunny. 30 to 50 km/h northwest ridgetop wind. Treeline temperature -6 °C. <br><br><strong>Tuesday</strong><br>Mostly sunny. 20 to 40 km/h northwest ridgetop wind. Treeline temperature -6 °C.</p> <p>More details can be found in the <a href="https://www.avalanche.ca/weather/forecast">Mountain Weather Forecast</a>.</p>
+</details>
+</div>
+</div>
+</section>
+<section id="lakemans-lookout" class="level2">
+<h2 class="anchored" data-anchor-id="lakemans-lookout">Lakeman’s Lookout</h2>
+<p>The following snippet is taken from the Mountain Forecast section of FAR’s website. Bear in mind that it will be up to 24 hours old by the time you read it! Many thanks as always to Ron Lakeman for his hard work.</p>
+<hr>
+<div class="cell" data-renderings="light">
+<div class="cell-output cell-output-stdout">
+<pre><code>Mountain Weather Report
 
 
+ISSUED: Sunday January 18, 2025 11:00 MST
+
+SYNOPSIS: A strong upper ridge of high pressure centred just off the coast will maintain dry, uneventful conditions during the next few days. Limited moisture drifting south-southeastward across Alberta should result in a few bands of cloud at times and patchy fog and low cloud is also possible due to a stagnating low level airmass tonight and Monday morning. Otherwise fairly sunny/clear skies should persist today and Monday.
+
+FREEZING LEVEL: Possibly rising slightly above surface this afternoon and again Monday afternoon. A deep temperature inversion will persist, the milder layer aloft should be above 2000 metres.
+
+FERNIE ALPINE RESORT FORECAST (1615 metres):
+
+TODAY: Sunny, just a few bands of high cloud. High temperature -2 or -3.
+
+TONIGHT: Clear with a few bands of cloud, possible low cloud and fog patches overnight. Low -10 or -11.
+
+MONDAY: Sunny with a few bands of cloud, possible low cloud and fog patches during the morning. High -2 or -3.
+
+MONDAY NIGHT: Clear with cloudy periods. Increasing wind overnight. Low -10 or -11.
+
+OUTLOOK:
+
+TUESDAY: A mix of sun &amp; cloud, slight chance of flurries during the morning. Windy at times. High -5 or -6. Low -13 or -14.
+
+WEDNESDAY: Sunny with cloudy periods, possible morning fog patches. High -6 or -7. Low -14 or -15.
+
+THURSDAY: A mix of sun &amp; cloud. Possibly windy at times. High near -7. Increasing cloud with a 40% chance of flurries Thursday night. Low near -15.
+
+CONFIDENCE/DISCUSSION: Good confidence of the synoptic pattern through Monday. Fair Monday night onward and also fair confidence of the local temperature and sky condition during the shorter term. The low cloud/fog appears to be confined mainly to the trench this morning. It’s still difficult to accurately predict the coverage, depth and persistence of the low cloud/fog tonight through Tuesday morning. The milder layer aloft could be more evident (the temperature could fluctuate at times) today and Monday. Some guidance suggests a slight chance of flurries with a minor disturbance clipping the Rockies Monday night and early Tuesday. A colder airmass should gradually push southward from Yukon-northern BC Tuesday or Tuesday night through Thursday. Some guidance suggests another weak disturbance could clip the Rockies with a few flurries Thursday night. The most recent longer range computer models downplay the chance of any flurries Thursday night and delay the chance of light snow until Saturday afternoon-Saturday night, more changes are likely here.
+
+ 
+
+Ron Lakeman.</code></pre>
+</div>
+</div>
+</section>
+<section id="grizzly-tales-for-gruesome-kids" class="level2">
+<h2 class="anchored" data-anchor-id="grizzly-tales-for-gruesome-kids">Grizzly Tales for Gruesome Kids</h2>
+<p>The Fernie Griz cam is situated close to the weather station. Check the timestamp at top of image to ensure it is up to date. The snow stake is usually cleared in the early morning or mid afternoon.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/griz-cam-1.png" class="img-fluid figure-img" width="960"></p>
+<figcaption>Griz cam static image</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p><a href="https://mountainweather.ca">Mountain Weather</a> <br> <a href="https://ferniealpineresort.ca">Fernie Alpine Resort</a> <br> <a href="avalanchecanada.ca">Avalanche Canada</a></p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

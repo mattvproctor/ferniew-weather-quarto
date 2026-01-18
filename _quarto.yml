@@ -13,7 +13,7 @@ website:
 format:
   html:
     theme:
-      - cosmo
+      - dark
       - brand
     css: styles.css
     toc: true

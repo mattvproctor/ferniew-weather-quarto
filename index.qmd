@@ -7,9 +7,6 @@ format:
         toc-title: Navigation
         code-overflow: scroll
         highlight-style: dracula
-        theme:
-          dark: darkly
-          light: flatly
 ---
 
 ```{r}
