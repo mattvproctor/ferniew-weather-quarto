@@ -1,1 +1,29 @@
-/* css styles */
+/* section {
+    background-color: aqua;
+} */
+
+.container-grid {
+    display: grid;
+    /* Creates two columns of equal width using fractional units (fr) */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    /* Adds space between columns */
+    gap: 20px;
+}
+
+.container-grid .column {
+    padding: 15px;
+    width: 100%;
+    /* background-color: #f2f2f2; */
+    border: 1px solid #ccc;
+}
+
+/* Optional: Add a media query to stack columns on small screens */
+@media (max-width: 600px) {
+    .container-grid {
+        grid-template-columns: 1fr; /* Stacks them into a single column */
+    }
+}
+
+code {
+    text-wrap: auto;
+}

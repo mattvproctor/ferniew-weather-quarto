@@ -1,7 +1,346 @@
 ---
-title: "ferniew-weather-quarto"
+title: "MVP's Mountain Weather Update"
+format:
+    html:
+        css: styles.css
+        toc: true
+        toc-title: Navigation
+        code-overflow: scroll
+        highlight-style: dracula
+        theme:
+          dark: darkly
+          light: flatly
 ---
 
-This is a Quarto website.
+```{r}
+#| echo: false
+#| warning: false
+source("./parseHtml.R")
+return_vector <- parse_html()
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+data_today <- return_vector$data_today %>%
+  dplyr::mutate(PrecipMM = ifelse(HourlyPrecipMM == 0, NA, HourlyPrecipMM)) %>%
+  dplyr::mutate(CumulativePrecipByType = ifelse(PrecipType == "Snow", HourlySnowCumulativeMM, ifelse(PrecipType == "Mixed", HourlyMixedCumulativeMM, HourlyRainCumulativeMM)))
+
+```
+
+This page presents weather data for Fernie Alpine Resort over the past 3 days, based off the weather station situated underneath the top of the Bear chair, at 1615m NE aspect in Lizard Range.
+
+## At a Glance
+
+```{r}
+#| label: table
+#| tbl-cap: Key data for the last 3 days provided by mountainweather.ca
+#| warning: false
+#| echo: false
+
+library(tibble)
+library(kableExtra)
+
+table <- return_vector$highlight_table
+
+if(as.numeric(table["- Snow (cm)","6 Hour"]) > 10){
+  status = "SNOW IS FALLING!!!!"
+} else if(as.numeric(table["- Snow (cm)","12 Hour"]) > 15) {
+  status = "POWDER DAY"
+} else if(as.numeric(table["- Snow (cm)","12 Hour"]) > 0) {
+  status = "Dustings :)"
+} else if(as.numeric(table["Max Temp (°C)","24 Hour"]) > 1 && as.numeric(table["Min Temp (°C)","24 Hour"]) < 1) {
+  status = "Beware freeze/Thaw!"
+} else if(as.numeric(table["Max Temp (°C)","24 Hour"]) < 0) {
+  status = "It's cooooold. Hard pack/icy conditions."
+} else {
+  status = "Nothing much to report :("
+}
+
+last_snowfall_df <- data_today %>%
+  dplyr::select(Timestamp, HourlySnowMM) %>%
+  dplyr::arrange(HourlySnowMM)
+
+last_snowfall <- lubridate::ymd_hms(last_snowfall_df[nrow(last_snowfall_df),"Timestamp"])
+last_timestamp <- data_today[nrow(data_today), "Timestamp"]
+
+if(max(last_snowfall_df$HourlySnowMM) > 0){
+  last_snowfall_hours = lubridate::as.period(lubridate::interval(last_snowfall, last_timestamp))
+} else if(data_today[nrow(data_today), "HourlySnowMM"] > 0) {
+  last_snowfall_hours = "NOW"
+} else {
+  last_snowfall_hours = "over 3 days ago"
+}
+
+cat(paste0("Data last updated on ", format(Sys.time(), "%Y-%m-%d %H:%M:%S %Z"),"."))
+cat(paste0("Most recent snowfall: ", last_snowfall_hours, ". Likely ski conditions: ", status))
+
+knitr::kable(table, caption = "Table with Grouped Rows", booktabs = TRUE) %>%
+  kable_styling(bootstrap_options = "hover") %>%
+  row_spec(row = c(1:3), background = "blue") %>%
+  row_spec(row = c(4:7), background = "orange") %>%
+  row_spec(row = c(8:10), background = "green") %>%
+  column_spec(column = seq(1, ncol(table)+1, by = 1), 
+              # background = "#f2f2f2",
+              border_left = "1px solid gray") %>%
+  kable_styling(full_width = TRUE) %>%
+  pack_rows("Temperature", 1, 3) %>%
+  pack_rows("Precipitation", 4, 7) %>%
+  pack_rows("Wind Speed and Direciton", 8, 10)
+
+```
+
+## Charts
+
+```{r}
+#| label: fig-plots
+#| warning: false
+#| echo: false
+#| fig-subcap:
+#|   - "Air temperature"
+#|   - "Precipitation by type. Any precip that falls between -1°C and 0.5°C is presumed to be mixed, trending towards rain. Any precip that falls above 0.5°C is presumed to be rain."
+
+
+library(ggplot2)
+library(plotly)
+
+# Plot 1
+
+p1 <- ggplot(data_today, aes(Timestamp, PresTempAir,
+text = paste("Timestamp:", Timestamp, "<br>Air Temp:", PresTempAir))) + 
+  geom_point(aes(color = PrecipType)) + geom_line(alpha = 0.5) +
+  geom_hline(yintercept=0.5, linetype="dashed", color="red") +
+  geom_hline(yintercept=-1, linetype="dashed", color="yellow") +
+  geom_hline(yintercept=-5, linetype="dashed", color="blue") +
+  geom_hline(yintercept=0, linetype="dashed", color="grey") +
+  scale_color_manual(values=c("orange", "red", "yellow")) +
+  theme(legend.position = "none", panel.background = element_rect(fill = "#333333")) +
+  labs(x = "", y = "Air temperature (°C)")
+
+ggplotly(p1, tooltip = "text")
+
+# Plot 3
+
+# Subset data for label
+data_today_subset = subset(data_today, Timestamp == max(Timestamp))
+
+p3 <- ggplot(data_today) + 
+  geom_line(aes(Timestamp, HourlyRainCumulativeMM), color = "blue", linewidth = 1) +
+  # Add labels only at the end of each line
+  # geom_text(data = data_today_subset, aes(Timestamp, HourlyRainCumulativeMM, label = ifelse(HourlyRainCumulativeMM > 0, paste("Rain:",HourlyRainCumulativeMM, "mm        "), ""))) +
+
+  geom_line(aes(Timestamp, HourlyMixedCumulativeMM), color = "green", linewidth = 1) +
+  geom_line(aes(Timestamp, HourlySnowCumulativeMM), color = "yellow", linewidth = 1) +
+
+
+  # Non-cumulative values underneath
+  geom_line(aes(Timestamp, HourlyPrecipMM)) + geom_point(aes(Timestamp, PrecipMM, color = PrecipType)) +
+  scale_color_manual(values=c("green", "blue", "yellow")) +
+  labs(x = "", y = "Cumulative precip (mm)") +
+  theme(panel.background = element_rect(fill = "#333333"))
+
+  ggplotly(p3) %>% 
+  layout(legend = list(
+    orientation = "h",
+    x = 0.5,      # Center horizontally
+    xanchor = "center",
+    y = -0.2,     # Below the plot area
+    yanchor = "bottom"
+  ))
+
+```
+
+<hr>
+
+```{r}
+#| label: wind-plots
+#| warning: false
+#| echo: false
+#| layout: [[50, 50]]
+#| fig-subcap:
+#|   - "Wind speed and direction over time. The direction of the arrow represents the average direction and the length of the arrow represents the average wind speed over each hour along the time axis."
+#|   - "Wind speed and direction over the last 3 days. Each segment of the graph shows the frequency of average hourly wind direction and speed, broken down into 12 compass directions and speed intervals of 10 m/s."
+
+# Wind Data
+
+wind_data = data_today %>% dplyr::select(Timestamp, AvgWindSpeed, WindDrDegrees, WindDrCompass) %>%
+  dplyr::mutate(ws = AvgWindSpeed,
+  wd = WindDrDegrees,
+  Xend = Timestamp + lubridate::dhours(AvgWindSpeed * 1 * -cos((90-WindDrDegrees) / 360 * 2 * pi)),
+  Yend = AvgWindSpeed * 1 * -sin((90-WindDrDegrees) / 360 * 2 * pi))
+
+# Plot 2
+
+p2 <- ggplot(wind_data) + 
+  geom_point(aes(Timestamp, 0), size = 1) +
+  geom_segment(aes(x = Timestamp,
+                   y = 0,
+                   xend = Xend,
+                   yend = Yend,
+                   col = factor(Timestamp),
+                   
+                   text = paste("Timestamp:", Timestamp, "<br>Wind:", AvgWindSpeed, "m/s", WindDrCompass)
+                   ),
+                   arrow = arrow(length = unit(0.5, "cm"))               
+               ) +
+  coord_fixed(3600) +
+  theme(legend.position = "none") +
+  labs(x = "", y = "Avg Wind Speed (m/s)")
+
+p2
+
+
+# Or use windRose instead
+library(openair)
+openair::windRose(wind_data, paddle = FALSE, ws.int = 10, auto.text = F)
+
+```
+
+
+## Avalanche Bulletin
+
+```{r}
+#| label: avi
+#| warning: false
+#| echo: false
+
+library(htmltools)
+library(stringr)
+library(janitor)
+
+avi_data <- return_vector$avi_canada
+
+validFrom = format(lubridate::with_tz(lubridate::ymd_hms(avi_data$report$dateIssued), "MST"), "%Y-%m-%d %H:%M:%S %Z")
+validUntil = format(lubridate::with_tz(lubridate::ymd_hms(avi_data$report$validUntil), "MST"), "%Y-%m-%d %H:%M:%S %Z")
+
+highlights = avi_data$report$highlights %>%
+  stringr::str_replace_all("</p><p>", " ") %>%
+  stringr::str_remove("<p>") %>%
+  stringr::str_remove("</p>")
+
+detailed_summaries = avi_data$report$summaries$content %>%
+  stringr::str_replace_all("</p><p>", " ")
+
+avalanche_summary = paste0("<i>Avalanche Summary</i>",detailed_summaries[1])
+snowpack_summary = paste0("<i>Snowpack Summary</i>",detailed_summaries[2])
+weather_summary = paste0("<i>Weather Summary</i>",detailed_summaries[3])
+
+danger_ratings_t = t(avi_data$report$dangerRatings)
+danger_ratings_tibble = danger_ratings_t %>%
+  # cbind(rownames(danger_ratings_t)) %>%
+  tibble::as_tibble() %>%
+  dplyr::mutate(`1` = kableExtra::cell_spec(`1`, background = ifelse(`1` == "1 - Low", "green", ifelse(`1` == "2 - Moderate", "yellow", ifelse(`1` == "3 - Considerable", "orange", ifelse(`1` == "4 - High", "red", ifelse(`1` == "5 - Extreme", "black", "grey")))))),
+                `2` = kableExtra::cell_spec(`2`, background = ifelse(`2` == "1 - Low", "green", ifelse(`2` == "2 - Moderate", "yellow", ifelse(`2` == "3 - Considerable", "orange", ifelse(`2` == "4 - High", "red", ifelse(`2` == "5 - Extreme", "black", "grey")))))),
+                `3` = kableExtra::cell_spec(`3`, background = ifelse(`3` == "1 - Low", "green", ifelse(`3` == "2 - Moderate", "yellow", ifelse(`3` == "3 - Considerable", "orange", ifelse(`3` == "4 - High", "red", ifelse(`3` == "5 - Extreme", "black", "grey"))))))) %>%
+  janitor::row_to_names(row_number = 2) %>%
+  dplyr::slice(3,6,9) %>%
+  dplyr::mutate(Elevation = c("Alpine", "Treeline", "Below Treeline")) %>%
+  dplyr::relocate(Elevation) %>%
+  kableExtra::kbl(format = "html", escape = FALSE)
+
+advice = avi_data$report$terrainAndTravelAdvice
+advice_bullets = "<ul>"
+for(i in 1:length(advice)){
+  advice_bullets = paste0(advice_bullets, "<li>", advice[i], "</li>")
+}
+advice_bullets = paste0(advice_bullets, "</ul>")
+
+problems = avi_data$report$problems %>%
+  as_tibble()
+
+if(nrow(problems) == 0){
+  problems_html = "No present reported problems."
+} else {
+  problems_html = ""
+
+  for(i in 1:nrow(problems)){
+    problems_html = paste0(problems_html, "<i>Problem ", i, ": ", problems$type$display[i], ".</i>") # Add problem title
+    problems_html = paste0(problems_html, problems$comment)
+
+    this_problem_factors = problems$factors[[i]]
+    problem_factors_html = paste0("<p style='background-color:LightGray;'>")
+    for(j in 1:nrow(this_problem_factors)){
+      problem_factors_html = paste0(problem_factors_html, "<img src='", this_problem_factors$graphic$url[j], "'/>")
+    }
+    problem_factors_html = paste0(problem_factors_html, "</p>")
+
+    problems_html = paste0(problems_html, problem_factors_html, "<br>")
+  }
+}
+
+
+
+
+tagList(
+  p(paste0("Updated on ",validFrom,", valid until ", validUntil, ". Valid for: ", avi_data$report$title, ".")),
+  HTML("<div class='container-grid'>
+    <div class='column'>"),
+  h5("Summary"),
+  em(highlights),
+  tags$br(),
+  HTML(advice_bullets),
+  HTML("</div>
+    <div class='column'>"),
+  h5("Danger Ratings"),
+  HTML(danger_ratings_tibble),
+  tags$br(),
+  h5("Report Confidence"),
+  p(tags$i(toupper(avi_data$report$confidence$rating$value), "- ", avi_data$report$confidence$statements, ".")),
+  HTML("</div>
+</div>"),
+  tags$br(),
+  HTML("<details>
+<summary>Click to see more detail on problems, snowpack and weather...</summary>"),
+  h5("Problems"),
+  HTML(problems_html),
+  tags$br(),
+  h5("Further Detail"),
+  HTML(avalanche_summary),
+  HTML(snowpack_summary),
+  HTML(weather_summary),
+  HTML("</details>")
+)
+
+
+
+```
+
+## Lakeman's Lookout
+
+The following snippet is taken from the Mountain Forecast section of FAR's website. Bear in mind that it will be up to 24 hours old by the time you read it! Many thanks as always to Ron Lakeman for his hard work.
+
+<hr>
+
+```{r}
+#| label: lakeman
+#| warning: false
+#| echo: false
+#| code-fold: true
+#| renderings: [light]
+
+return_vector$Lakeman_forecast %>%
+    # strwrap(75) %>%
+    writeLines()
+
+
+```
+
+## Grizzly Tales for Gruesome Kids
+
+The Fernie Griz cam is situated close to the weather station. Check the timestamp at top of image to ensure it is up to date. The snow stake is usually cleared in the early morning or mid afternoon.
+
+```{r}
+#| label: griz-cam
+#| fig-cap: "Griz cam static image"
+#| warning: false
+#| echo: false
+
+return_vector$griz_cam
+
+
+```
+
+
+## References
+
+[Mountain Weather](https://mountainweather.ca)
+<br>
+[Fernie Alpine Resort](https://ferniealpineresort.ca)
+<br>
+[Avalanche Canada](avalanchecanada.ca)
