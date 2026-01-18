@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MVP’s Mountain Weather Update",
+    "section": "",
+    "text": "This page presents weather data for Fernie Alpine Resort over the past 3 days, based off the weather station situated underneath the top of the Bear chair, at 1615m NE aspect in Lizard Range."
+  },
+  {
+    "objectID": "index.html#at-a-glance",
+    "href": "index.html#at-a-glance",
+    "title": "MVP’s Mountain Weather Update",
+    "section": "At a Glance",
+    "text": "At a Glance\n\n\nData last updated on 2026-01-18 16:04:01 MST.\n\n\nMost recent snowfall: over 3 days ago. Likely ski conditions: It's cooooold. Hard pack/icy conditions.\n\n\n\nKey data for the last 3 days provided by mountainweather.ca\n\n\n\n6 Hour\n12 Hour\n24 Hour\n2 Day\n3 Day\n\n\n\n\nTemperature\n\n\nAvg Temp (°C)\n-3.8\n-5.8\n-6.5\n-6.9\n-5.7\n\n\nMax Temp (°C)\n-2.4\n-2.4\n-2.4\n-2.4\n1.4\n\n\nMin Temp (°C)\n-5.2\n-8.5\n-9.5\n-10.0\n-10.0\n\n\nPrecipitation\n\n\nTotal Precip (mm)\n0\n0\n0\n0\n0\n\n\n- Snow (cm)\n0\n0\n0\n0\n0\n\n\n- Rain (mm)\n0\n0\n0\n0\n0\n\n\n- Mixed / Wet Snow (mm)\n0\n0\n0\n0\n0\n\n\nWind Speed and Direciton\n\n\nAvg Wind Speed (m/s)\n1.3\n1.5\n2.1\n2.1\n2.2\n\n\nMax Wind Speed (m/s)\n2\n3\n7\n9\n9\n\n\nPrevelant Wind Direction\nNNW\nSSE\nWSW\nWSW\nWSW"
+  },
+  {
+    "objectID": "index.html#charts",
+    "href": "index.html#charts",
+    "title": "MVP’s Mountain Weather Update",
+    "section": "Charts",
+    "text": "Charts\n\n\n\n\n\n\n\n\nFigure 1: Air temperature\n\n\n\n\n\n\n\n\n\n\nFigure 2: Precipitation by type. Any precip that falls between -1°C and 0.5°C is presumed to be mixed, trending towards rain. Any precip that falls above 0.5°C is presumed to be rain.\n\n\n\n\n\n\n\n\n\n\n\nWind speed and direction over time. The direction of the arrow represents the average direction and the length of the arrow represents the average wind speed over each hour along the time axis.\n\n\n\n\n\n\n\nWind speed and direction over the last 3 days. Each segment of the graph shows the frequency of average hourly wind direction and speed, broken down into 12 compass directions and speed intervals of 10 m/s."
+  },
+  {
+    "objectID": "index.html#avalanche-bulletin",
+    "href": "index.html#avalanche-bulletin",
+    "title": "MVP’s Mountain Weather Update",
+    "section": "Avalanche Bulletin",
+    "text": "Avalanche Bulletin\n\n\nUpdated on 2026-01-17 17:00:00 MST, valid until 2026-01-18 17:00:00 MST. Valid for: Akamina-Flathead-Lizard-Moyie-St. Mary.\n\n    \nSummary\nBefore committing to a slope, consider how far you would slide if you slipped on the crust. \n\nAvalanche activity is unlikely when a thick melt-freeze crust is present on the snow surface.This is a good time for exploring terrain.A hard crust on the snow surface will help strengthen the snowpack, but may cause tough travel conditions.\n\n    \nDanger Ratings\n\n\n\n\nElevation\nSunday\nMonday\nTuesday\n\n\n\n\nAlpine\n1 - Low\n1 - Low\n1 - Low\n\n\nTreeline\n1 - Low\n1 - Low\n1 - Low\n\n\nBelow Treeline\n1 - Low\n1 - Low\n1 - Low\n\n\n\n\n\nReport Confidence\n\n\nHIGH\n- \nConfidence is due to a stable weather pattern; little change is expected for several days.\n.\n\n\n\n\n\n\nClick to see more detail on problems, snowpack and weather...\nProblems\nNo present reported problems.\n\nFurther Detail\nAvalanche Summary A few small wet loose avalanches were reported on Thursday. A crust has formed on the surface making avalanche activity unlikely. A natural avalanche cycle occurred at the beginning of the week with many avalanches (size 1-2) on all aspects and elevations. \nSnowpack Summary A crust or moist snow exists on the surface at most elevations due to recent rain and warm temperatures. Below this, the upper snowpack is slowly drying out with colder temperatures.  There are multiple crusts in the mid and lower snowpack, and it is generally dense and well-settled. The average snowpack depth at treeline is roughly 150 to 200 cm.\nWeather Summary Saturday NightClear skies. 15 to 30 km/h variable direction ridgetop wind. Treeline temperature -3 °C. SundayMostly sunny. 10 km/h variable direction ridgetop wind. Treeline temperature -5 °C. MondayMostly sunny. 30 to 50 km/h northwest ridgetop wind. Treeline temperature -6 °C. TuesdayMostly sunny. 20 to 40 km/h northwest ridgetop wind. Treeline temperature -6 °C. More details can be found in the Mountain Weather Forecast."
+  },
+  {
+    "objectID": "index.html#lakemans-lookout",
+    "href": "index.html#lakemans-lookout",
+    "title": "MVP’s Mountain Weather Update",
+    "section": "Lakeman’s Lookout",
+    "text": "Lakeman’s Lookout\nThe following snippet is taken from the Mountain Forecast section of FAR’s website. Bear in mind that it will be up to 24 hours old by the time you read it! Many thanks as always to Ron Lakeman for his hard work.\n\n\n\nMountain Weather Report\n\n\nISSUED: Sunday January 18, 2025 11:00 MST\n\nSYNOPSIS: A strong upper ridge of high pressure centred just off the coast will maintain dry, uneventful conditions during the next few days. Limited moisture drifting south-southeastward across Alberta should result in a few bands of cloud at times and patchy fog and low cloud is also possible due to a stagnating low level airmass tonight and Monday morning. Otherwise fairly sunny/clear skies should persist today and Monday.\n\nFREEZING LEVEL: Possibly rising slightly above surface this afternoon and again Monday afternoon. A deep temperature inversion will persist, the milder layer aloft should be above 2000 metres.\n\nFERNIE ALPINE RESORT FORECAST (1615 metres):\n\nTODAY: Sunny, just a few bands of high cloud. High temperature -2 or -3.\n\nTONIGHT: Clear with a few bands of cloud, possible low cloud and fog patches overnight. Low -10 or -11.\n\nMONDAY: Sunny with a few bands of cloud, possible low cloud and fog patches during the morning. High -2 or -3.\n\nMONDAY NIGHT: Clear with cloudy periods. Increasing wind overnight. Low -10 or -11.\n\nOUTLOOK:\n\nTUESDAY: A mix of sun & cloud, slight chance of flurries during the morning. Windy at times. High -5 or -6. Low -13 or -14.\n\nWEDNESDAY: Sunny with cloudy periods, possible morning fog patches. High -6 or -7. Low -14 or -15.\n\nTHURSDAY: A mix of sun & cloud. Possibly windy at times. High near -7. Increasing cloud with a 40% chance of flurries Thursday night. Low near -15.\n\nCONFIDENCE/DISCUSSION: Good confidence of the synoptic pattern through Monday. Fair Monday night onward and also fair confidence of the local temperature and sky condition during the shorter term. The low cloud/fog appears to be confined mainly to the trench this morning. It’s still difficult to accurately predict the coverage, depth and persistence of the low cloud/fog tonight through Tuesday morning. The milder layer aloft could be more evident (the temperature could fluctuate at times) today and Monday. Some guidance suggests a slight chance of flurries with a minor disturbance clipping the Rockies Monday night and early Tuesday. A colder airmass should gradually push southward from Yukon-northern BC Tuesday or Tuesday night through Thursday. Some guidance suggests another weak disturbance could clip the Rockies with a few flurries Thursday night. The most recent longer range computer models downplay the chance of any flurries Thursday night and delay the chance of light snow until Saturday afternoon-Saturday night, more changes are likely here.\n\n \n\nRon Lakeman."
+  },
+  {
+    "objectID": "index.html#grizzly-tales-for-gruesome-kids",
+    "href": "index.html#grizzly-tales-for-gruesome-kids",
+    "title": "MVP’s Mountain Weather Update",
+    "section": "Grizzly Tales for Gruesome Kids",
+    "text": "Grizzly Tales for Gruesome Kids\nThe Fernie Griz cam is situated close to the weather station. Check the timestamp at top of image to ensure it is up to date. The snow stake is usually cleared in the early morning or mid afternoon.\n\n\n\n\n\nGriz cam static image"
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "MVP’s Mountain Weather Update",
+    "section": "References",
+    "text": "References\nMountain Weather  Fernie Alpine Resort  Avalanche Canada"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
