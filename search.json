@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "MVP’s Mountain Weather Update",
     "section": "",
-    "text": "Data last updated on Mon 2026-02-23 09:27:04 MST."
+    "text": "Data last updated on Mon 2026-02-23 09:32:00 MST."
   },
   {
     "objectID": "index.html#at-a-glance",
     "href": "index.html#at-a-glance",
     "title": "MVP’s Mountain Weather Update",
     "section": "At a Glance",
-    "text": "At a Glance\n\n\n\nKey data for the last 3 days provided by mountainweather.ca\n\n\n\n6 Hour\n12 Hour\n24 Hour\n2 Day\n3 Day\n\n\n\n\nTemperature\n\n\nAvg Temp (°C)\n-1.0\n-1.2\n-1.4\n-3.5\n-5.3\n\n\nMax Temp (°C)\n-0.6\n-0.2\n-0.2\n-0.2\n-0.2\n\n\nMin Temp (°C)\n-1.6\n-2.5\n-8.9\n-11.5\n-13.3\n\n\nPrecipitation\n\n\nTotal Precip (mm)\n16.49\n20.80\n20.80\n21.30\n23.33\n\n\n- Snow (cm)\n16.49\n20.80\n20.80\n21.30\n23.33\n\n\n- Rain (mm)\n0\n0\n0\n0\n0\n\n\n- Mixed / Wet Snow (mm)\n0\n0\n0\n0\n0\n\n\nWind Speed and Direciton\n\n\nAvg Wind Speed (kph)\n7.8\n6.7\n6.8\n5.6\n5.2\n\n\nMax Wind Speed (kph)\n14\n14\n14\n14\n18\n\n\nPrevelant Wind Direction\nNNE\nNNW\nNNW\nNNW\nWNW"
+    "text": "At a Glance\n\n\n\nKey data for the last 3 days provided by mountainweather.ca\n\n\n\n6 Hour\n12 Hour\n24 Hour\n2 Day\n3 Day\n\n\n\n\nTemperature\n\n\nAvg Temp (°C)\n-0.9\n-1.2\n-1.4\n-3.5\n-5.2\n\n\nMax Temp (°C)\n-0.6\n-0.3\n-0.2\n-0.2\n-0.2\n\n\nMin Temp (°C)\n-1.3\n-2.5\n-8.9\n-11.5\n-13.3\n\n\nPrecipitation\n\n\nTotal Precip (mm)\n16.24\n21.31\n21.31\n21.81\n23.84\n\n\n- Snow (cm)\n16.24\n21.31\n21.31\n21.81\n23.84\n\n\n- Rain (mm)\n0\n0\n0\n0\n0\n\n\n- Mixed / Wet Snow (mm)\n0\n0\n0\n0\n0\n\n\nWind Speed and Direciton\n\n\nAvg Wind Speed (kph)\n8.1\n6.8\n6.9\n5.7\n5.3\n\n\nMax Wind Speed (kph)\n14\n14\n14\n14\n18\n\n\nPrevelant Wind Direction\nNNE\nNNW\nNNW\nNNW\nWNW"
   },
   {
     "objectID": "index.html#weather-station-charts",
